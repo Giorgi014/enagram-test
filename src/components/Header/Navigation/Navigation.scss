@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "helvetica_regular";
+  src: url(../../../assets/fonts/Helvetica.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+nav {
+  ul {
+    list-style: none;
+    li {
+      cursor: pointer;
+      a {
+        @include displayCenter(flex-start, center);
+        width: 100%;
+        gap: 9px;
+        text-decoration: none;
+        font-family: "helvetica_regular";
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--white);
+        padding: 12px 0px 12px 12px;
+        border-radius: 100vh 0 0 100vh;
+        visibility: visible;
+        &.active {
+          position: relative;
+          background-color: var(--white);
+          color: var(--blue);
+          &::before,
+          &::after {
+            --border_radius: 1rem;
+            content: "";
+            position: absolute;
+            width: var(--border_radius);
+            height: var(--border_radius);
+            right: 0;
+            background: transparent;
+          }
+          &::before {
+            top: calc(var(--border_radius) * -1);
+            border-radius: 0 0 100vh 0;
+            box-shadow: 10px 10px 0 10px var(--white);
+          }
+          &::after {
+            bottom: calc(var(--border_radius) * -1);
+            border-radius: 0 100vh 0 0;
+            box-shadow: 10px -10px 0 10px var(--white);
+          }
+        }
+        .label {
+          display: inline-block;
+          max-width: 160px;
+          transition: opacity 0.5s ease-in-out, max-width 0.5s ease-in-out;
+          opacity: 1;
+          overflow: hidden;
+          white-space: nowrap;
+          vertical-align: middle;
+        }
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
