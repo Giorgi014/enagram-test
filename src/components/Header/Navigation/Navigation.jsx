@@ -2,10 +2,8 @@ import { IoMdArrowForward } from "react-icons/io";
 import { Check, Text, Microphone, Text_voice, Document } from "../../Route";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "./Navigation.scss";
-import { useState } from "react";
 
 const Navigation = () => {
-  const [activeId, setActiveId] = useState(2);
   const navItems = [
     { id: 1, icon: Check, label: "მართლმწერი" },
     { id: 2, icon: Text, label: "ტექსტის შედარება" },

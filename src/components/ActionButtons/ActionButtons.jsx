@@ -1,5 +1,5 @@
 import {clsx} from 'clsx'
-import "./Button.scss"
+import "./ActionButtons.scss"
 
 export const Button = ({variant = "default", children, ...props }) => {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Diff from "diff-match-patch";
 import { Arrows } from "../../Route";
-import { Button } from "../../Button/Button";
+import { Button } from "../../ActionButtons/ActionButtons";
 import { Textarea } from "./Textarea";
 import "./Compare.scss";
 

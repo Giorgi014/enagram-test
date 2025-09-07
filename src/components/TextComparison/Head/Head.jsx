@@ -1,4 +1,4 @@
-import { Button } from "../../Button/Button";
+import { Button } from "../../ActionButtons/ActionButtons";
 import { GoPlusCircle } from "react-icons/go";
 import { Language } from "../../Language/Language";
 import "./Head.scss";
