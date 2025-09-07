@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "helvetica";
+  src: url(../../assets/fonts/helvetica-light-587ebe5a59211.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.default {
+  @include displayCenter(center, center);
+  gap: 4px;
+  font-family: helvetica;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-color: var(--transparent_blue);
+  transition: background 0.2s ease-in-out;
+  white-space: nowrap;
+  &:hover {
+    background-color: var(--lighter_blue);
+  }
+  cursor: pointer;
+}
+
+.create_btn {
+  width: 150px;
+  padding: 7px 16px 7px 12px;
+}
+
+@media screen and (max-width: 650px) {
+  .create_btn {
+    width: 100%;
+  }
+}

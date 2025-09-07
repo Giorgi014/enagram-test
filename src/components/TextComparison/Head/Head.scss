@@ -1,0 +1,67 @@
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.head_cont {
+  @include displayCenter(space-between, center);
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--darker_white);
+  .languge_and_format {
+    @include displayCenter(flex-start, center);
+    width: 100%;
+    gap: 24px;
+    .format_cont {
+      @include displayCenter(center, center);
+      gap: 8px;
+      .format {
+        appearance: none;
+        width: 22px;
+        height: 22px;
+        border: 2px solid var(--darker_white);
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        background-color: white;
+        transition: all 0.2s ease;
+
+        &:checked {
+          background-color: var(--lighter_blue);
+          border-color: var(--lighter_blue);
+        }
+
+        &:checked::after {
+          content: "";
+          position: absolute;
+          top: 15%;
+          left: 30%;
+          width: 5px;
+          height: 9px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: 650px) {
+  .head_cont {
+    @include displayCenter(flex-start, flex-start);
+    flex-direction: column;
+    .languge_and_format {
+      @include displayCenter(flex-start, flex-start);
+      flex-direction: column;
+      gap: 0px;
+      .format_cont {
+        margin: 16px 0px;
+      }
+    }
+  }
+}

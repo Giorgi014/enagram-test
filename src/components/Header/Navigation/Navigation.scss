@@ -65,6 +65,9 @@ nav {
           width: 24px;
           height: 24px;
         }
+        .down_row{
+          display: none;
+        }
       }
     }
   }
@@ -74,35 +77,19 @@ nav {
 
 @media screen and (max-width: 1025px) {
   nav {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    background-color: rebeccapurple;
     ul {
-      @include displayCenter(space-evenly, center);
       li {
         a {
-          @include displayCenter(center, center);
-          border-radius: 100vh 100vh 0vh 0vh;
-          padding: 12px;
-          &.active {
-          &::before {
-            top: 33px;
-            bottom: calc(var(--border_radius) * -1);
-            left: calc(var(--border_radius) * -0.95);
-            border-radius: 0 0 100vh 0;
-            box-shadow: 10px 10px 0 5px var(--white);
-          }
+          padding: 15.27px 27px;
+          border-radius: 0px;
+          &::before,
           &::after {
-            top: 33px;
-            right: calc(var(--border_radius) * -0.95);
-            bottom: calc(var(--border_radius) * -1);
-            border-radius: 0 0 0 100vh;
-            box-shadow: -10px 10px 0 5px var(--white);
-          }
-        }
-          .label {
             display: none;
           }
+          .down_row{
+          display: block;
+        }
         }
       }
     }

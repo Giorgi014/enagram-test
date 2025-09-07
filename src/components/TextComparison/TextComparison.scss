@@ -3,3 +3,22 @@
     justify-content: $justify;
     align-items: $align;
 } 
+
+.text_comparison_container{
+    width: 100%;
+    padding: 24px 40px 24px 24px;
+}
+
+// Responsive
+
+@media screen and (max-width: 1024px) {
+  .text_comparison_container {
+    padding: 28px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .text_comparison_container {
+    padding: 16px;
+  }
+}

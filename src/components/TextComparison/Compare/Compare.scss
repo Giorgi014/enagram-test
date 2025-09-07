@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "helvetica";
+  src: url(../../../assets/fonts/helvetica-light-587ebe5a59211.ttf) format("woff2");
+}
+
+@mixin displayCenter($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}

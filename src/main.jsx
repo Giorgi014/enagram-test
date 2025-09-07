@@ -4,7 +4,6 @@ import "./index.scss";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const Main = React.lazy(() => import("./components/Main/Main.jsx"));
 const Scribe = React.lazy(() =>
   import("./components/Route.jsx").then((m) => ({ default: m.Scribe }))
 );
@@ -26,10 +25,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Main />,
-      },
       {
         path: "მართლმწერი",
         element: <Scribe />,

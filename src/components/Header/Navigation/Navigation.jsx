@@ -1,6 +1,7 @@
 import { IoMdArrowForward } from "react-icons/io";
 import { Check, Text, Microphone, Text_voice, Document } from "../../Route";
 import { NavLink } from "react-router-dom";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "./Navigation.scss";
 
 const Navigation = () => {
@@ -40,6 +41,7 @@ const Navigation = () => {
                 {label} {arrow && <IoMdArrowForward />}{" "}
                 {secondLabel && secondLabel}
               </span>
+              <MdOutlineKeyboardArrowDown className="down_row" />
             </NavLink>
           </li>
         ))}

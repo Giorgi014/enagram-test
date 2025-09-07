@@ -1,9 +1,14 @@
-import './TextComparison.scss'
+import { Compare } from "./Compare/Compare";
+import { Head } from "./Head/Head";
+import "./TextComparison.scss";
 
 const TextComparison = () => {
   return (
-    <div>TextComparison</div>
-  )
-}
+    <article className="text_comparison_container">
+      <Head />
+      <Compare />
+    </article>
+  );
+};
 
-export default TextComparison
+export default TextComparison;
