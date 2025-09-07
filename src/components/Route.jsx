@@ -1,9 +1,5 @@
 import Header from "./Header/Header";
-import Scribe from "./Scribe/Scribe";
 import TextComparison from "./TextComparison/TextComparison";
-import TextToVoice from "./TextToVoice/TextToVoice";
-import VoiceToText from "./VoiceToText/VoiceToText";
-import Convertation from "./Convertation/Convertation";
 
 // Images
 
@@ -17,16 +13,12 @@ import Arrows from "../assets/images/arrows.png";
 
 export {
   Header,
-  Scribe,
   TextComparison,
-  TextToVoice,
-  VoiceToText,
   Logo,
   Check,
   Text,
   Microphone,
   Text_voice,
   Document,
-  Convertation,
   Arrows
 };

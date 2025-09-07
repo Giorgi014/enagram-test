@@ -4,20 +4,8 @@ import "./index.scss";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const Scribe = React.lazy(() =>
-  import("./components/Route.jsx").then((m) => ({ default: m.Scribe }))
-);
 const TextComparison = React.lazy(() =>
   import("./components/Route.jsx").then((m) => ({ default: m.TextComparison }))
-);
-const TextToVoice = React.lazy(() =>
-  import("./components/Route.jsx").then((m) => ({ default: m.TextToVoice }))
-);
-const VoiceToText = React.lazy(() =>
-  import("./components/Route.jsx").then((m) => ({ default: m.VoiceToText }))
-);
-const Convertation = React.lazy(() =>
-  import("./components/Route.jsx").then((m) => ({ default: m.Convertation }))
 );
 
 const router = createBrowserRouter([
@@ -26,24 +14,8 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "მართლმწერი",
-        element: <Scribe />,
-      },
-      {
-        path: "ტექსტის_შედარება",
+        path: "/",
         element: <TextComparison />,
-      },
-      {
-        path: "ხმა_ტექსტი",
-        element: <TextToVoice />,
-      },
-      {
-        path: "ტექსტი_ხმა",
-        element: <VoiceToText />,
-      },
-      {
-        path: "კონვერტაცია",
-        element: <Convertation />,
       },
     ],
   },
