@@ -60,7 +60,6 @@ header {
   nav {
     ul {
       li {
-        a {
           .label {
             position: relative;
             visibility: visible;
@@ -68,7 +67,6 @@ header {
             width: 100%;
             overflow: hidden;
           }
-        }
       }
     }
   }
@@ -87,13 +85,11 @@ header {
     nav {
       ul {
         li {
-          a {
             .label {
               max-width: 0;
               opacity: 0;
               pointer-events: none;
             }
-          }
         }
       }
     }
