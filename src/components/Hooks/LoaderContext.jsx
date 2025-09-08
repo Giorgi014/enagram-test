@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import "./Css/LoaderContext.scss";
+import "./css/LoaderContext.scss";
 
 const LoaderContext = createContext();
 
