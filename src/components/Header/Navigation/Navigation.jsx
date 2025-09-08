@@ -1,5 +1,5 @@
 import { IoMdArrowForward } from "react-icons/io";
-import { Check, Text, Microphone, Text_voice, Document } from "../../Route";
+import { Check, Text, Microphone, Text_voice, Document } from "../../Exports";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import "./Navigation.scss";
 

@@ -1,6 +1,6 @@
 import { Button } from "../../ActionButtons/ActionButtons";
 import { GoPlusCircle } from "react-icons/go";
-import { Language } from "../../Language/Language";
+import { Language } from "../../LanguageSelector/LanguageSelector";
 import "./Head.scss";
 
 export const Head = ({ onReset }) => {

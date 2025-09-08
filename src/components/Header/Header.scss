@@ -60,14 +60,60 @@ header {
   nav {
     ul {
       li {
-          .label {
-            position: relative;
-            visibility: visible;
-            opacity: 1;
-            width: 100%;
-            overflow: hidden;
-          }
+        .label {
+          position: relative;
+          visibility: visible;
+          opacity: 1;
+          width: 100%;
+          overflow: hidden;
+        }
       }
+    }
+  }
+  .user_cont {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 20px 12px;
+    border-top: 1px solid #9eb9ff33;
+    .user_section {
+      @include displayCenter(flex-start, center);
+      gap: 5px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12px;
+      transition: left 0.5s ease-in-out, transform 0.5s ease-in-out;
+      cursor: pointer;
+      .user {
+        @include displayCenter(center, center);
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--white);
+        background-color: var(--light_bg);
+        p {
+          color: var(--blue);
+          font-size: 10px;
+          list-style: 24px;
+          margin-bottom: 4px;
+        }
+      }
+      .user_name {
+        color: var(--white);
+        font-size: 14px;
+        list-style: 20px;
+        white-space: nowrap;
+      }
+    }
+    .dots {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+      color: var(--white);
+      cursor: pointer;
     }
   }
   &.close {
@@ -85,12 +131,32 @@ header {
     nav {
       ul {
         li {
-            .label {
-              max-width: 0;
-              opacity: 0;
-              pointer-events: none;
-            }
+          .label {
+            max-width: 0;
+            opacity: 0;
+            pointer-events: none;
+          }
         }
+      }
+    }
+    .user_cont {
+      .user_section {
+        top: 50%;
+        left: 35%;
+        transform: translate(-50, 50%);
+        transition: left 0.5s ease-in-out, transform 0.5s ease-in-out;
+        .user_name {
+          max-width: 0;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.5s ease-in-out, max-width 0.5s ease-in-out;
+        }
+      }
+      .dots {
+        max-width: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease-in-out, max-width 0.5s ease-in-out;
       }
     }
   }

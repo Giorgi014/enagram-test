@@ -20,10 +20,10 @@
   background-color: var(--transparent_blue);
   transition: background 0.2s ease-in-out;
   white-space: nowrap;
+  cursor: pointer;
   &:hover {
     background-color: var(--lighter_blue);
   }
-  cursor: pointer;
 }
 
 .create_btn {

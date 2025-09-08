@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LoaderProvider } from "./components/Hooks/LoaderContext.jsx";
 
 const TextComparison = React.lazy(() =>
-  import("./components/Route.jsx").then((m) => ({ default: m.TextComparison }))
+  import("./components/Exports.jsx").then((m) => ({ default: m.TextComparison }))
 );
 
 const router = createBrowserRouter([

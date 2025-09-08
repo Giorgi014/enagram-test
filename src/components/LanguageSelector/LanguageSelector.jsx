@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import "./Language.scss";
+import "./LanguageSelector.scss";
 
 export const Language = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("ქართული");

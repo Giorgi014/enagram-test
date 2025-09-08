@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Diff from "diff-match-patch";
-import { Arrows } from "../../Route";
+import { Arrows } from "../../Exports";
 import { Button } from "../../ActionButtons/ActionButtons";
 import { Textarea } from "./Textarea";
+import { useLoader } from "../../Hooks/LoaderContext";
 import "./Compare.scss";
 
 export const Compare = ({ reset }) => {
@@ -11,6 +12,7 @@ export const Compare = ({ reset }) => {
   const [highlight1, setHighlight1] = useState(null);
   const [highlight2, setHighlight2] = useState(null);
   const [isCompared, setIsCompared] = useState(false);
+  const { isLoading, setIsLoading } = useLoader();
 
   const compareTexts = () => {
     if (!text1 && !text2) {
@@ -24,36 +26,41 @@ export const Compare = ({ reset }) => {
       return;
     }
 
-    const dmp = new Diff();
-    const diffs = dmp.diff_main(text1, text2);
-    dmp.diff_cleanupSemantic(diffs);
+    setIsLoading(true);
 
-    let parts1 = [];
-    let parts2 = [];
+    setTimeout(() => {
+      const dmp = new Diff();
+      const diffs = dmp.diff_main(text1, text2);
+      dmp.diff_cleanupSemantic(diffs);
 
-    diffs.forEach(([type, text], index) => {
-      if (type === -1) {
-        parts1.push(
-          <span key={`r${index}`} className="removed">
-            {text}
-          </span>
-        );
-      } else if (type === 1) {
-        parts2.push(
-          <span key={`a${index}`} className="added">
-            {text}
-          </span>
-        );
-      } else {
-        parts1.push(<span key={`c1${index}`}>{text}</span>);
-        parts2.push(<span key={`c2${index}`}>{text}</span>);
-      }
-    });
+      let parts1 = [];
+      let parts2 = [];
 
-    setHighlight1(parts1);
-    setHighlight2(parts2);
+      diffs.forEach(([type, text], index) => {
+        if (type === -1) {
+          parts1.push(
+            <span key={`r${index}`} className="removed">
+              {text}
+            </span>
+          );
+        } else if (type === 1) {
+          parts2.push(
+            <span key={`a${index}`} className="added">
+              {text}
+            </span>
+          );
+        } else {
+          parts1.push(<span key={`c1${index}`}>{text}</span>);
+          parts2.push(<span key={`c2${index}`}>{text}</span>);
+        }
+      });
 
-    setIsCompared(true);
+      setHighlight1(parts1);
+      setHighlight2(parts2);
+      setIsCompared(true);
+
+      setIsLoading(false);
+    }, 1000);
   };
 
   const handleText1Change = (e) => {
@@ -80,6 +87,10 @@ export const Compare = ({ reset }) => {
     }
   }, [reset]);
 
+  if (isLoading) {
+    return null;
+  }
+
   return (
     <article className="compare_container">
       <section className="text_area_cont">
@@ -100,7 +111,7 @@ export const Compare = ({ reset }) => {
         />
       </section>
 
-      <Button variant="comparison" onClick={compareTexts}>
+      <Button variant="comparison" onClick={compareTexts} disabled={isCompared}>
         შედარება
       </Button>
     </article>
